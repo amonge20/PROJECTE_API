@@ -1,106 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Lista de juegos</title>
-    <style>
-      /* Estilos CSS */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f1f1f1;
-      }
-      #gameList {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0;
-      }
-      .gameCard {
-        width: 300px;
-        background-color: #ffffff;
-        margin: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-      .gameCard:hover {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      }
-      .gameImage {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 5px 5px 0 0;
-      }
-      .gameInfo {
-        padding: 20px;
-        text-align: center;
-      }
-      .gameTitle {
-        font-size: 24px;
-        margin: 10px 0;
-      }
-      .gamePlatform {
-        font-size: 16px;
-        margin: 5px 0;
-      }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>Lista de juegos</h1>
-    </header>
-    <main>
-      <ul id="gameList"></ul>
-    </main>
-    <script>
-     // JavaScript para consumir la API
-     const gameList = document.getElementById('gameList');
-
-     const options = {
-       method: 'GET',
-       url: 'https://instant-gaming-api.p.rapidapi.com/api/v1/instantGaming',
-       params: {
-         name: 'stardew valley',
-         platform: 'pc'
-       },
-       headers: {
-         'X-RapidAPI-Key': 'ebf6ef4972mshd45adee9190a720p117553jsn6544d26b5618',
-         'X-RapidAPI-Host': 'instant-gaming-api.p.rapidapi.com'
-       }
-     };
-
-     axios.request(options)
-       .then(response => {
-         const data = response.data;
-         data.forEach(game => {
-           const li = document.createElement('li');
-           const div = document.createElement('div');
-           const img = document.createElement('img');
-           const h2 = document.createElement('h2');
-           const p = document.createElement('p');
-           img.src = game.image_url;
-           h2.textContent = game.name;
-           p.textContent = 'Plataformas: ' + game.platforms.join(', ');
-           div.appendChild(img);
-           div.appendChild(h2);
-           div.appendChild(p);
-           li.appendChild(div);
-           li.classList.add('gameCard');
-           div.classList.add('gameInfo');
-           img.classList.add('gameImage');
-           h2.classList.add('gameTitle');
-           p.classList.add('gamePlatform');
-           gameList.appendChild(li);
-         });
-       })
-       .catch(error => {
-         console.error(error);
-         const errorMessage = document.createElement('p');
-         errorMessage.textContent = 'Error al obtener los datos';
-         gameList.appendChild(errorMessage);
-       });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Trivia</h1>
+  </header>
+  <main>
+    <div id="question"></div>
+    <div id="options"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

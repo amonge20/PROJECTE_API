@@ -1,19 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trivia</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Agrega los enlaces a los archivos de Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<title>Peliculas Online</title>
 </head>
 <body>
   <header>
-    <h1>Trivia</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">API de Películas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="rating.html">Rating</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
-  <main>
-    <div id="question"></div>
-    <div id="options"></div>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <div class="contenedor" id="contenedor">
+	<div id="movieList" class="row mt-4">
+		<!-- Agrega aquí las imágenes y ratings de las películas -->
+		<div class="col-md-3">
+		  <div class="rating">
+			<input type="radio" id="rating1" name="rating1" value="5">
+			<label for="rating1"></label>
+			<input type="radio" id="rating2" name="rating1" value="4">
+			<label for="rating2"></label>
+			<input type="radio" id="rating3" name="rating1" value="3">
+			<label for="rating3"></label>
+			<input type="radio" id="rating4" name="rating1" value="2">
+			<label for="rating4"></label>
+			<input type="radio" id="rating5" name="rating1" value="1">
+			<label for="rating5"></label>
+		  </div>
+		</div>
+		<div class="col-md-3">
+		  <div class="rating">
+			<input type="radio" id="rating6" name="rating2" value="5">
+			<label for="rating6"></label>
+			<input type="radio" id="rating7" name="rating2" value="4">
+			<label for="rating7"></label>
+			<input type="radio" id="rating8" name="rating2" value="3">
+			<label for="rating8"></label>
+			<input type="radio" id="rating9" name="rating2" value="2">
+			<label for="rating9"></label>
+			<input type="radio" id="rating10" name="rating2" value="1">
+			<label for="rating10"></label>
+		  </div>
+		</div>
+	  </div>
+  
+	  <!-- Aquí se mostrará la sinopsis de la película -->
+	  <div id="movieSummary" class="mt-4"></div>
+	</div>
+  </div>
+
+  <div class="paginacion">
+	  <button id="btnAnterior">Anterior</button>
+	  <button id="btnSiguiente">Siguiente</button>
+  </div>
+   
+  <!-- Agrega los scripts de Bootstrap JS y tu código personalizado -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

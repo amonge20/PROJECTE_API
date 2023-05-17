@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <title>Valoración de la película</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Agrega los enlaces a los archivos de Bootstrap CSS -->
@@ -11,14 +12,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="valoracion.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Peliculas Online</title>
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">API de Películas</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a a class="navbar-brand text-white" href="index.html">API de Películas</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,31 +27,12 @@
       </div>
     </nav>
   </header>
-
-  <div class="contenedor" id="contenedor"></div>
-
+  <h1>Valoración de la película</h1>
   <div id="movieRating"></div>
-
-  <div id="valoracionContainer"></div>
-
+  <canvas id="valoracionesChart"></canvas>
   <div data-movie-id="${movieId}" class="valoracionContainer"></div>
-
-  <div id="movieSummary"></div>
-  <button class="btn-valoracion" data-movie-id="1" onclick="mostrarValoracion()">Mostrar Valoración</button>
-  <button class="btn-sinopsis" data-movie-id="1" onclick="mostrarSinopsis()">Mostrar Sinopsis</button>
-
-  <div class="paginacion">
-    <button id="btnAnterior">Anterior</button>
-    <button id="btnSiguiente">Siguiente</button>
-  </div>
-
-
-  <!-- Agrega los scripts de Bootstrap JS y tu código personalizado -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-  <script src="valoracion.js"></script>
-  <script src="sinopsis.js"></script>
   <script src="valoracion.js"></script>
 </body>
 </html>
